@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>spesial kyword dan funcion</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        background-color: #ddd;
+      }
+      .container {
+        width: 60%;
+        margin: 50px auto;
+        display: grid;
+        /* reapet */
+        /* grid-template-columns:repeat(4, 1fr) repeat(5, 1.5fr); */
+
+        /* min dan max conten */
+        /* grid-template-columns: 1fr min-content 1fr; */
+
+        /* autofit dan autofil */
+        /* grid-template-columns: repeat(auto-fit, 100px); */
+
+        grid-template-columns: 1fr minmax(200px, 300px) 1fr;
+      }
+
+      .item {
+        background-color: rgb(255, 107, 107);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .item:nth-child(even) {
+        background-color: rgb(101, 101, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">samsul</div>
+      <div class="item">2</div>
+      <div class="item">arifin</div>
+    </div>
+  </body>
+</html>

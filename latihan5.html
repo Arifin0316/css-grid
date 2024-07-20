@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: #ddd;
+        }
+        h3{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+        }
+        .container{
+            width: 60%;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-column-gap: 10px;
+            grid-template-areas:
+            'header header header'
+            'slidbar slidbar slidbar'
+            'konten konten konten'
+            'foter foter foter' ;
+        }
+        .item{
+            width: 100%;
+            background-color: rgb(116, 116, 220);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 100px;
+        }
+        .header{
+            background-color: rgb(139, 139, 244);
+            grid-area: header;
+        }
+        .slidbar{
+            grid-area: slidbar;
+            background-color: rgb(245, 245, 66);
+        }
+        .konten{
+            grid-area: konten;
+            background-color: rgb(144, 247, 144);
+        }
+        .foter{
+            grid-area: foter;
+            background-color: rgb(85, 92, 98);
+        }
+
+        /* resposif brek poin */
+        @media screen and (min-width:700px) {
+            .container{
+            grid-template-areas:
+            'header header header'
+            'slidbar konten konten'
+            'slidbar konten konten'
+            'foter foter foter' ;
+            }
+        }
+    </style>
+    <title>grid-area</title>
+</head>
+<body>
+
+    <h3>grid area</h3>
+    <div class="container">
+        <div class="item header">header</div>
+        <div class="item slidbar">slidbar</div>
+        <div class="item konten">konten</div>
+        <div class="item foter">foter</div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,249 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+img{
+    width: 100%;
+}
+body{
+    font-family:kanit, Arial, Helvetica, sans-serif;
+    background-color: #ddd;
+    margin: 50px;
+}
+
+.container{
+    display: grid;
+    gap: 10px;
+}
+
+
+/* header */
+header{
+    display: grid;
+    grid-template-areas:
+    'hero hero featur-1'
+    'hero hero featur-2' ;
+}
+.hero{
+    grid-area: hero;
+    min-height: 300px;
+    background-image: url(img/im1.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+
+}
+.hero > *{
+    display: none;
+}
+
+.featur{
+    color: white;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.featur-1{
+    grid-area: featur-1;
+    background-image: url(img/img2.jpg);
+    background-size: cover;
+}
+.featur-2{
+    grid-area: featur-2;
+    background-image: url(img/img7.jpg);
+    background-size: cover;
+}
+.featur .price{
+    font-size: 3rem;
+    font-weight: 200;
+}
+
+/* navbar */
+.menu{
+    order: -1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+.menu .brend{
+    font-size: 1.3em;
+    color: #333;
+}
+.menu ul{
+    list-style-type:none;;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+   
+}
+.menu a{
+    display: block;
+    background-color: black;
+    color: #ddd;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 0.9;
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    background-color: #333;
+    border-radius: 2px;
+    display: inline;
+    height: 3px;
+    margin: 5px 0;
+    width: 25px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+.menu-list.active {
+    display: flex;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.sosial{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+
+    
+   
+}
+.sosial a{
+    
+    padding: 10px;
+    border-radius: 5%;
+    color: black;
+}
+.sosial a:hover{
+    background-color: #eee;
+
+}
+.sosial a i{
+    width: 200px;
+}
+.anime{
+    background-color: #333;
+}
+h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight:400 ;
+    color: white;
+    padding: 1rem ;
+}
+.anime-list{
+    display: flex;
+    width: max-content;
+    gap: 1rem;
+}
+.horizontal-scrol{
+    width: 100%;
+    overflow-x: scroll;
+    scrollbar-color:transparent transparent;
+}
+.horizontal-scrol::-webkit-scrollbar{
+    display: none;
+}
+.anime-list .item{
+    box-sizing: border-box;
+    color: #ddd;
+}
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+
+/* resposif brek poin */
+@media (max-width: 768px) {
+    .menu{
+        /* order: -1;
+        display: flex;
+        justify-content: end; */
+    }
+    .menu .brend{
+        display: none;
+    }
+    .hero >*{
+        display: block;
+        background-color: black;
+        color: white;
+        font-weight: 400;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+    .hero{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+    }
+    .menu-list {
+        display: block;
+        flex-direction: column;
+        width: 50%;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        right: -400px;
+        height: 100%;
+        transition: right 0.3s ease;
+        padding-top: 50px;
+    }
+    .menu-list a{
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+
+    }
+    .hamburger {
+        display: flex;
+    }
+    .menu-list.active {
+        right: 0;
+    }
+}
+@media (max-width: 600px) {
+    header{
+        grid-template-areas:
+        'hero'
+        'featur-1'
+        'featur-2' ;
+        display:block;
+    }
+
+    .anime-list{
+        display: block;
+        width: 100%;
+    }
+    .anime-list .item{
+        margin-bottom: 2rem;
+    }
+}
+    
